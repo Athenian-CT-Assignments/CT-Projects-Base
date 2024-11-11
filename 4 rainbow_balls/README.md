@@ -16,7 +16,7 @@ Okay, getting better... But let's make our balls a variety of colors. Whenever a
 Change the program to alternate between two colors (you can choose whichever ones you'd like!). To do that, you should have the `pick_color()` function return one color when `ball_number` is odd, and the other color when `ball_number` is even. Remember, you can use the modulo operator (`%`) to find the remainder of one number divided by another.
 
 ## Task 3: A Taste of the Rainbow
-Above the `pick_color()` function, a list called `rainbow` is defined that contains all of the colors of the rainbow. Update your `pick_color()` function so that instead of alternating between two colors, it alternates among the first 3 colors of `rainbow`.
+If you look at the parameters for `pick_color()`, you should notice that the function has 2 parameters: `ball_number` and `colors`. You have already used `ball_number`. Now we'll work with `colors`, which is a list of possible colors. Update your `pick_color()` function so that instead of alternating between two colors, it alternates among the first 3 colors of the list. Remember that you can access values in a list by using their index.
 
 ## Task 4: The Full Spectrum
 Two colors is good, but you know what's even better? A whole rainbow! Update your `pick_color()` function so that it goes through the full range of colors. Up to this point, you may have been using a separate `if` statement for each color. Try to complete this task without using any `if` statements. Hint: the modulo function (`%`) will again be very useful here!
@@ -25,6 +25,8 @@ Two colors is good, but you know what's even better? A whole rainbow! Update you
 As a final task, let's make our program more interactive. On day 2 of this week, you will learn about how to get text input using windows in Turtle. If you didn't do that yet, you can try to figure it out on your own here: https://docs.python.org/3/library/turtle.html#turtle.textinput
 
 When the program starts, the `get_possible_colors` function is called to determine what colors will be passed into `pick_color`. Update this function to ask the user to enter a series of colors instead of always returning the rainbow. If the user clicks "cancel" at any point, default to using the rainbow. You can determine if the user canceled by checking if the return value of `screen.textinput` is `None`.
+
+Note: if you are using `ball_number % 7` in `pick_color()` your program will break if there are fewer than seven colors in your list. Instead of using a static number, use `ball_number % len(colors)` to allow this to work for any number of colors. (Recall that `len()` is a pre-built python function that returns the length of a list or string.)
 
 ## Bonus Task: Pot of Gold
 Nice work completing the assignment! Now that you're done, you have a few options:
